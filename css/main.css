@@ -19,8 +19,15 @@ a {
   background: #000 url(../img/lake.jpg) center center no-repeat;
   position: relative; }
   .main h1 {
+    display: inline-block;
+    width: auto;
     font-size: 4.3rem;
-    margin: 0; }
+    margin: 0 1rem;
+    letter-spacing: 5px;
+    border: 1rem solid #fff;
+    padding: 1rem 2rem;
+    -webkit-box-shadow: 0px 0px 15px white;
+    box-shadow: 0px 0px 15px white; }
   .main p {
     font-size: 2.7rem;
     margin: 1rem; }
@@ -46,16 +53,105 @@ a {
     width: 20rem;
     margin: 1.5em auto;
     background-color: #fff; }
-  .main__down {
+
+.link {
+  width: 10rem;
+  height: 10rem;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(232, 226, 79, 0.4)), to(rgba(146, 79, 169, 0.5)));
+  background-image: linear-gradient(to bottom right, rgba(232, 226, 79, 0.4) 0%, rgba(146, 79, 169, 0.5) 100%);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  position: releative; }
+  .link:hover::before, .link:hover::after {
+    content: "";
     position: absolute;
-    bottom: 15%;
-    left: calc(50% - 20px);
+    border: 1px solid #29aee3;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    -webkit-animation: btn 1.8s linear infinite;
+    animation: btn 1.8s linear infinite;
+    opacity: 0; }
+  .link__cursor {
+    width: 4rem;
+    position: absolute;
+    top: 32%;
+    left: 32%;
     color: rgba(255, 255, 255, 0.83);
     font-size: 40px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s; }
-    .main__down:hover {
-      color: rgba(251, 238, 63, 0.77); }
+    -webkit-transition: 0.5 sease-out;
+    transition: 0.5 sease-out;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    z-index: 1;
+    -webkit-animation: cursor ease-in-out 2s infinite;
+    animation: cursor ease-in-out 2s infinite; }
+  .link__down {
+    width: 5rem;
+    position: absolute;
+    top: 2.6rem;
+    left: 2.6rem;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    opacity: 0;
+    -webkit-transition: .6s ease-out;
+    transition: .6s ease-out; }
+  .link:hover .link__cursor {
+    opacity: 0; }
+  .link:hover .link__down {
+    opacity: 1; }
+
+.link:hover::after {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s; }
+
+@-webkit-keyframes cursor {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+
+@keyframes cursor {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
+
+@-webkit-keyframes btn {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0; } }
+
+@keyframes btn {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0; } }
 
 .block {
   text-align: center;
@@ -78,6 +174,7 @@ a {
       margin: 5rem auto;
       border-bottom: 1px solid transparent; }
       .block__portfolio__cart-btn:hover {
+        color: #29aee3;
         text-decoration: none;
         border-bottom: 1px dotted  #646464; }
     .block__portfolio__cart img {
@@ -107,7 +204,7 @@ a {
     margin: .5rem;
     line-height: 4rem; }
     .footer__icon:hover {
-      color: rgba(251, 238, 63, 0.9); }
+      color: #40b7e6; }
   .footer__btn {
     display: inline-block;
     color: #e4e4e4;
@@ -123,8 +220,8 @@ a {
       text-decoration: none;
       cursor: pointer;
       border: 2px solid #e4e4e4;
-      color: #646464;
-      background-color: #e4e4e4; }
+      color: #e4e4e4;
+      background-color: #40b7e6; }
 
 .modal img {
   width: 100%; }

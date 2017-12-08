@@ -26,24 +26,30 @@
     <![endif]-->
   </head>
   <body>
+    <!-- первый экран -->
     <div class="main">
       <!-- оверлей -->
       <div class="main__overlay">
         <!-- обертка -->
-      <div class="main__wrapper">  
-        <!-- заголовоу УТП     -->
-        <div class="main__header">
-          <h1>Алексей Мейман</h1>
-          <div class="main__line"></div>
-          <p>Разработка сайтов под ключ <br>
-            Верстка на HTML \ CSS. <br> Продвижение сайта в сети </p>
-            <a class="main__down" href="#"><i class="icon-dw"></i></a>
+        <div class="main__wrapper">  
+          <!-- заголовоу УТП     -->
+          <div class="main__header">
+            <h1>Алексей Мейман</h1>
+            <div class="main__line"></div>
+            <p>Разработка сайтов под ключ <br>
+              Верстка на HTML \ CSS. <br> Продвижение сайта в сети </p>
+              <!-- кнопка вниз  -->
+              <div class="link">
+                <a href="#block-porfolio">
+                  <img class="link__cursor" src="img/cursor.svg" alt="cursor">
+                  <img class="link__down" src="img/down.svg" alt="down">
+                </a>           
+              </div>
+          </div>
         </div>
-      </div>
-
-      </div>
+        </div>
     </div>
-    <div class="container block">
+    <div id="block-porfolio" class="container block">
       <h1 class="block__header">Портфолио</h1>
       <div class="row">
         <div class="block__portfolio">
@@ -109,6 +115,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="libs/PageScroll2id/jquery.malihu.PageScroll2id.min.js"></script>
+    <script src="js/common.js"></script>
     <script>
       $(function() {
         var link = $('a[data-toggle="modal"]');
@@ -121,5 +129,7 @@
       });
 
     </script>
+   
+    
   </body>
 </html>
